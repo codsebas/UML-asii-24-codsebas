@@ -75,6 +75,7 @@ El módulo propuesto contempla:
 ```text
 .
 ├── README.md
+├── DECLARACION_IA.md
 └── week-01/
     ├── README.md
     ├── 01-scope-actors-use-cases.md
