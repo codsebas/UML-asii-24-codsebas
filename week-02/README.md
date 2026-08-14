@@ -9,14 +9,16 @@
 ## Estado de la entrega
 
 - Fase 1 completada
-- Fase 2 pendiente
+- Fase 2 completada
+- Semana 2 completada
 
 ## Entregables
 
 - [RF, RNF, criterios de aceptación y trazabilidad](01-requirements-and-acceptance-criteria.md)
+- [Ejemplo SOLID: inversión de dependencias](02-solid-dependency-inversion.md)
 
 ## Nota de alcance
 
 - La Semana 1 sigue siendo la base aprobada para actores y casos de uso.
 - El PR actual permanece abierto y continuará recibiendo los commits de la Semana 2.
-- Esta evidencia separa los hechos verificados del repositorio de los comportamientos propuestos para ASII-24.
+- Esta evidencia ahora incluye RF, RNF, criterios de aceptación, trazabilidad y un ejemplo de inversión de dependencias.
