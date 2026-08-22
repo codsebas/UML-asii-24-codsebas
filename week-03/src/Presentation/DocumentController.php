@@ -60,6 +60,8 @@ final class DocumentController
             return $this->response(503, ['error' => 'persistence error']);
         } catch (JsonException $exception) {
             return $this->response(400, ['error' => 'invalid JSON body']);
+        } catch (\Throwable $exception) {
+            return $this->response(500, ['error' => 'unexpected error']);
         }
     }
 
