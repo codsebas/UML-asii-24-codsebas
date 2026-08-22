@@ -99,10 +99,10 @@ Se cubren:
 
 ## 14. Evidencia Git
 
-- Commit inicial de documentacion: `[pendiente]`
-- Commit de dominio y persistencia: `[pendiente]`
-- Commit de presentacion y pruebas: `[pendiente]`
-- Commit de diagramas y cierre: `[pendiente]`
+- Commit inicial de documentacion: `fbb79d9`
+- Commit de dominio y casos de uso: `6712256`
+- Commit de persistencia y presentacion: `eeb68dd`
+- Commit de pruebas automatizadas: `c28e202`
 
 ## 15. Declaracion de IA
 
