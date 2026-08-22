@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+actor Admin
+actor Medico
+actor Enfermera
+actor TecnicoLab
+actor Recepcionista
+
+rectangle "Centro de documentacion y manuales" {
+  usecase "Publicar documento" as UC1
+  usecase "Asignar roles" as UC2
+  usecase "Listar documentos por rol" as UC3
+  usecase "Consultar detalle autorizado" as UC4
+  usecase "Denegar acceso" as UC5
+}
+
+Admin --> UC1
+Admin --> UC2
+Medico --> UC3
+Medico --> UC4
+Enfermera --> UC3
+Enfermera --> UC4
+TecnicoLab --> UC3
+TecnicoLab --> UC4
+Recepcionista --> UC3
+Recepcionista --> UC4
+UC4 ..> UC5 : incluye
+@enduml

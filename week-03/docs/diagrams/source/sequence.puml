@@ -1,0 +1,19 @@
+@startuml
+actor Medico
+participant DocumentController
+participant GetDocumentForRole
+participant SQLiteDocumentRepository
+
+Medico -> DocumentController : GET /documents/1?role=Medico
+DocumentController -> GetDocumentForRole : execute(1, Medico)
+GetDocumentForRole -> SQLiteDocumentRepository : findById(1)
+SQLiteDocumentRepository --> GetDocumentForRole : Document
+GetDocumentForRole -> GetDocumentForRole : verify role allowed
+GetDocumentForRole --> DocumentController : document detail
+DocumentController --> Medico : 200 JSON
+
+alt role not allowed
+  GetDocumentForRole -> GetDocumentForRole : throw UnauthorizedRoleException
+  DocumentController --> Medico : 403 JSON
+end
+@enduml

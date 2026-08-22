@@ -1,0 +1,54 @@
+@startuml
+class Document {
+  -?int id
+  -string code
+  -string title
+  -string description
+  -string content
+  -string status
+  -array allowedRoles
+  -?DateTimeImmutable createdAt
+  +create(...)
+  +hydrate(...)
+  +toArray(): array
+}
+
+interface DocumentRepository {
+  +save(Document document): Document
+  +codeExists(string code): bool
+  +findPublishedByRole(string role): array
+  +findById(int id): ?Document
+}
+
+class PublishDocument {
+  +execute(array input): array
+}
+
+class ListDocumentsByRole {
+  +execute(string role): array
+}
+
+class GetDocumentForRole {
+  +execute(int id, string role): array
+}
+
+class SQLiteDocumentRepository {
+  +save(Document document): Document
+  +codeExists(string code): bool
+  +findPublishedByRole(string role): array
+  +findById(int id): ?Document
+}
+
+class DocumentController {
+  +handle(array server, array get, string body): void
+}
+
+DocumentRepository <|.. SQLiteDocumentRepository
+PublishDocument --> DocumentRepository
+ListDocumentsByRole --> DocumentRepository
+GetDocumentForRole --> DocumentRepository
+DocumentController --> PublishDocument
+DocumentController --> ListDocumentsByRole
+DocumentController --> GetDocumentForRole
+Document --> DocumentRepository : persisted as
+@enduml
